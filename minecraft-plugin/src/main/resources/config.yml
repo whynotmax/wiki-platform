@@ -3,7 +3,11 @@
 plugin:
   enable-command: true # Whether to enable the /wiki <id> command
   command:
-    command-name: wiki # The name of the command to use
+    name: wiki # The name of the command to use
+    aliases: # Aliases for the command
+      - w
+      - wiki-entry
+    permission: wiki.use # Permission required to use the command, can be empty
     description: Get a wiki entry by ID # Description of the command
     usage: /wiki <id> # Usage message for the command
   api:
