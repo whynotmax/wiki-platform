@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/wiki") // wie von dir gewünscht ohne /api
 public class WikiController {
@@ -68,8 +69,8 @@ public class WikiController {
 
     // POST /wiki - Create new entry
     @PostMapping
-    public WikiEntry createEntry(@RequestBody WikiEntry entry) {
-        return wikiService.save(entry);
+    public ResponseEntity<WikiEntry> createEntry(@RequestBody WikiEntry entry) {
+        return ResponseEntity.ok(wikiService.save(entry));
     }
 
     // PUT /wiki/{id} - update existing entry
