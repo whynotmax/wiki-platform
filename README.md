@@ -81,11 +81,15 @@ npm start
 
 ## 📬 API Overview
 
-| Method |    Endpoint     |      Description       |
-|:------:|:---------------:|:----------------------:|
-|  GET   |      /wiki      |  Get all wiki entries  |
-|  GET   |   /wiki/{id}    |  Get a specific entry  |
-|  POST  |      /wiki      |   Create a new entry   |
+| Method |             Endpoint             |       Description        |
+|:------:|:--------------------------------:|:------------------------:|
+|  GET   |              /wiki               |   Get all wiki entries   |
+|  GET   |            /wiki/{id}            |   Get a specific entry   |
+|  POST  |              /wiki               |    Create a new entry    |
+|  PUT   |            /wiki/{id}            | Update an existing entry |
+| DELETE |            /wiki/{id}            | Delete a specific entry  |
+|  GET   | /wiki/search?query={searchQuery} | Search entries by title  |
+|  GET   |           /wiki/random           | Get a random wiki entry  |
 
 ---
 
