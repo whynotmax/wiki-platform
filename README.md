@@ -68,9 +68,11 @@ npm start
 
 ### Minecraft Plugin
 
-1. Build the plugin:  
-   cd minecraft-plugin  
-   ./gradlew build
+1. Build the plugin:
+   ```bash
+      cd minecraft-plugin  
+      ./gradlew build
+   ```
 2. Copy the .jar from `build/libs/` into your server's `plugins/` folder
 3. Start your Minecraft server
 4. Use `/wiki <topic>` to view entries in-game
