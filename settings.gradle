@@ -1,1 +1,5 @@
 rootProject.name = 'wiki-platform'
+
+include 'backend'
+include 'frontend'
+include 'minecraft-plugin'
