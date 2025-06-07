@@ -1,0 +1,8 @@
+spring:
+  security:
+    user:
+      name: admin
+      password: secretPass123
+  data:
+    mongodb:
+      uri: mongodb://localhost/test
