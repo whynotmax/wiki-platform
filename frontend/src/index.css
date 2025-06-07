@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    background: radial-gradient(ellipse at top left, #232946 60%, #121212 100%);
+    color: #eaeaea;
+    font-family: 'Inter', sans-serif;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background: #151a23;
+    padding: 2rem 1rem 1rem 1.5rem;
+    font-weight: 600;
+    overflow-y: auto;
+}
+
+.sidebar-section {
+    font-weight: bold;
+    margin: 1.2rem 0 0.5rem 0;
+    color: #fff;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar li {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    color: #a4b0c0;
+    transition: background 0.2s, color 0.2s;
+}
+.sidebar li.active, .sidebar li:hover {
+    background: #22293a;
+    color: #48a0fa;
+    font-weight: bold;
+}
+
+.main-content {
+    flex: 1;
+    padding: 3rem 2rem 2rem 2rem;
+}
+
+.main-image {
+    max-width: 55%;
+    margin: 2rem 0;
+    border-radius: 20px;
+    background: #181f2a;
+    display: block;
+}
+
+.toc {
+    width: 220px;
+    padding: 2rem 1rem 1rem 0;
+    color: #a4b0c0;
+    font-size: 0.95rem;
+}
+.toc ul {
+    list-style: none;
+    padding-left: 1rem;
+    border-left: 2px solid #22303d;
+}
+.toc li {
+    color: #48a0fa;
+    cursor: pointer;
+    margin-bottom: 0.6rem;
+}
