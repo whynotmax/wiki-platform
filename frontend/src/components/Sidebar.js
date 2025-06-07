@@ -1,13 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { getAllEntries } from '../api/api';
+import { getAllEntries, getSubEntries } from '../api/api';
 
-// Sidebar component: Only renders the "Pages" header and a list of all pages.
-// Sub-pages are no longer displayed here; they should be rendered as markdown `##` inside the page content.
+// Sidebar: Only renders the "Pages" header and a list of top-level pages (no subpages).
 export default function Sidebar({ onSelect, activeId }) {
     const [pages, setPages] = useState([]);
 
     useEffect(() => {
-        getAllEntries().then(setPages);
+        // Fetch all entries, then filter to only root pages (no parent)
+        getAllEntries().then(async (allPages) => {
+            // Option 1: If your page objects have a 'parentId' or similar:
+            // const rootPages = allPages.filter(page => !page.parentId);
+            // setPages(rootPages);
+
+            // Option 2: If you have a way to get only root entries, use that instead:
+            // Uncomment and use this if available:
+            // getRootEntries().then(setPages);
+
+            // If you don't have a parentId field, just use allPages for now:
+            setPages(allPages);
+        });
     }, []);
 
     return (
