@@ -11,6 +11,9 @@ public class WikiEntry {
     @Id
     private String id;  // Wiki entry ID
 
+    private boolean isSubEntry; // Is this a subentry?
+    private String parentId; // ID of the parent entry, if this is a subentry
+
     private String title; // Title of the wiki entry
     private String content; // Markdown
 }

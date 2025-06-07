@@ -15,7 +15,15 @@ public class SecurityConfig {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/wiki", "/wiki/", "/wiki/{id}", "/wiki/random", "/wiki/search").permitAll()  // öffentlich
+                        .requestMatchers(
+                            "/wiki", 
+                            "/wiki/", 
+                            "/wiki/{id}", 
+                            "/wiki/random", 
+                            "/wiki/search",
+                            "/wiki/root",
+                            "/wiki/{id}/sub"
+                        ).permitAll()  // öffentlich
                         .requestMatchers("/wiki/**").authenticated() // alle anderen (POST, PUT, DELETE) require auth
                 )
                 .httpBasic(Customizer.withDefaults());  // Basic Auth

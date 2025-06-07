@@ -26,12 +26,24 @@ public class WikiController {
         return wikiService.findAll();
     }
 
+    // GET /wiki/root - only root entries (not sub-entries)
+    @GetMapping("/root")
+    public List<WikiEntry> getRootEntries() {
+        return wikiService.findRootEntries();
+    }
+
     // GET /wiki/{id} - get single entry by ID
     @GetMapping("/{id}")
     public ResponseEntity<WikiEntry> getEntryById(@PathVariable String id) {
         return wikiService.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    // GET /wiki/{id}/sub - get subentries for a given entry
+    @GetMapping("/{id}/sub")
+    public List<WikiEntry> getSubEntries(@PathVariable String id) {
+        return wikiService.findSubEntries(id);
     }
 
     // GET /wiki/random - random entry
@@ -67,6 +79,8 @@ public class WikiController {
                 .map(existing -> {
                     existing.setTitle(updatedEntry.getTitle());
                     existing.setContent(updatedEntry.getContent());
+                    existing.setSubEntry(updatedEntry.isSubEntry());
+                    existing.setParentId(updatedEntry.getParentId());
                     return ResponseEntity.ok(wikiService.save(existing));
                 })
                 .orElse(ResponseEntity.notFound().build());

@@ -29,14 +29,14 @@ public class WikiCommand extends Command {
         }
 
         if (args.length != 1) {
-            player.sendMessage("Usage: /wiki <entryId>");
+            player.sendMessage("Usage: /wiki <entryId[#subEntry[#subSubEntry...]]>");
             return true;
         }
 
-        String entryId = args[0];
+        String entryPath = args[0];
 
         try {
-            var entry = wikiApiClient.getWikiEntryById(entryId);
+            var entry = wikiApiClient.getWikiEntryByPath(entryPath);
 
             if (entry == null) {
                 player.sendMessage("Wiki entry not found.");
