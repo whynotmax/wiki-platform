@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getRootEntries, getSubEntries } from '../api/api';
+import { getAllEntries } from '../api/api';
 
 export default function Sidebar({ onSelect, activeId }) {
     const [sections, setSections] = useState([]);
@@ -50,7 +51,6 @@ export default function Sidebar({ onSelect, activeId }) {
     );
 }
 
-import { getAllEntries } from '../api/api';
 
 export function PagesList({ onSelect, activeId }) {
     const [pages, setPages] = useState([]);
