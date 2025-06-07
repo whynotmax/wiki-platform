@@ -1,8 +1,22 @@
+plugins {
+    id 'java-library'
+}
+
 allprojects {
     group = 'dev.mzcy'
     version = '1.0.0'
 
+    apply plugin: 'java-library'
+
     repositories {
         mavenCentral()
+    }
+
+    dependencies {
+        compileOnly 'org.jetbrains:annotations:26.0.2' // IntelliJ annotations
+        annotationProcessor 'org.jetbrains:annotations:26.0.2' // IntelliJ annotations
+
+        compileOnly 'org.projectlombok:lombok:1.18.38' // Lombok
+        annotationProcessor 'org.projectlombok:lombok:1.18.38' // Lombok
     }
 }
