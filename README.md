@@ -49,6 +49,8 @@ wiki-platform/
 - MongoDB
 - Minecraft Server (Spigot or Paper)
 
+---
+
 ### Backend (Spring Boot – Gradle)
 
 ```bash
@@ -73,6 +75,8 @@ npm start
 3. Start your Minecraft server
 4. Use `/wiki <topic>` to view entries in-game
 
+---
+
 ## 📬 API Overview
 
 | Method |    Endpoint     |      Description       |
@@ -80,6 +84,8 @@ npm start
 |  GET   |      /wiki      |  Get all wiki entries  |
 |  GET   |   /wiki/{id}    |  Get a specific entry  |
 |  POST  |      /wiki      |   Create a new entry   |
+
+---
 
 ## 🛡️ License
 
