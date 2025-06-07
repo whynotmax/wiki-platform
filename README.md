@@ -103,6 +103,7 @@ This project is licensed under the **MIT License** – use it, modify it, share 
 
 Developed by **Max**, IT specialist and Minecraft plugin enthusiast.  
 Contributions welcome – feel free to fork and improve!
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
 
 ---
 
